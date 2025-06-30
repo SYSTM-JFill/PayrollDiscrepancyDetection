@@ -24,8 +24,42 @@ This project includes **mock data** generated to simulate typical payroll export
 
 ---
 
-## 📦 Requirements
+## 📤 Output
 
-- Python 3.7 or higher
-- pandas library
-- tkinter (usually included with Python standard library)
+After running the audit tool, you will receive:
+
+### 1. Terminal Summary
+
+A concise summary printed to the terminal showing:
+
+- Total records compared between the two systems
+- Number of mismatches detected
+- A preview of the first few mismatched records
+
+### 2. Discrepancy Report CSV
+
+A detailed CSV file listing all mismatched records with the following columns:
+
+| Date       | Employee_ID | TABS_Total_Hours | SAP_Total_Hours | Hour_Difference | Match  |
+|------------|-------------|------------------|-----------------|-----------------|--------|
+| 2024-06-10 | EMP002      | 7.5              | 8.0             | 0.5             | False  |
+
+- **Date**: The date of the payroll record.
+- **Employee_ID**: Unique identifier for the employee.
+- **TABS_Total_Hours**: Hours recorded in the TABS payroll export.
+- **SAP_Total_Hours**: Hours recorded in the SAP payroll export.
+- **Hour_Difference**: The difference in hours (SAP - TABS).
+- **Match**: Boolean indicating whether hours match within the tolerance.
+
+### 3. Visual Examples
+
+Here are example screenshots of the output and discrepancy report from the project:
+
+- ![Report Output Example 1](https://github.com/SYSTM-JFill/PayrollDiscrepancyDetection/blob/main/Payroll_Detection/Report_Output_Example1.png)
+- ![Report Output Example 2](https://github.com/SYSTM-JFill/PayrollDiscrepancyDetection/blob/main/Payroll_Detection/Report_Output_Example2.png)
+- ![Report Output Example 3](https://github.com/SYSTM-JFill/PayrollDiscrepancyDetection/blob/main/Payroll_Detection/Report_Output_Example3.png)
+
+These images illustrate typical mismatch records and the format of the exported CSV file, helping you quickly understand and investigate discrepancies.
+
+---
+
